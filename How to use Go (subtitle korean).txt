@@ -1,0 +1,12 @@
+c드라이브 아래 GO
+
+C:\Go\src/아래 깃허브 주소/아이디/레파지토리 이름
+ex ) C:\Go\src\github.com\ani8570\learngo
+
+package 이름 작성  
+fuc main() {
+}
+main.go는 컴파일 만을 위해 필요
+
+"fmt" : package for formatting 
+fmt.Println 대문자로 시작하는 함수는 export 가능
