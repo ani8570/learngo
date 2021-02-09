@@ -4,6 +4,8 @@ ex) c:\
 C:\Go\src/github.com/my_id/repository name
 ex ) C:\Go\src\github.com\ani8570\learngo
 
+go.mod -> go mod init 이름
+
 package 이름 작성
 ex ) package main
 

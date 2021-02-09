@@ -2,18 +2,30 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/ani8570/learngo/accounts"
+	"learngo/mydict"
 )
 
+// //account main
+// func main() {
+// 	account := accounts.NewAccount("Lee")
+
+// 	account.Deposit(10)
+// 	// err := account.Withdraw(60)
+// 	// if err != nil {
+// 	// 	fmt.Println(err)
+// 	// }
+// 	fmt.Println(account.Balance(), account.Owner())
+// 	fmt.Println(account)
+
+// }
+
 func main() {
-	account := accounts.NewAccount("Lee")
-	fmt.Println(account)
-	account.Deposit(10)
-	fmt.Println(account.Balance())
-	err := account.Withraw(60)
+	dictionary := mydict.Dictionary{"first": "First word"}
+	fmt.Println(dictionary["first"])
+	definition, err := dictionary.Search("first")
 	if err != nil {
 		fmt.Println(err)
+	} else {
+		fmt.Println(definition)
 	}
-	fmt.Println(account.Balance())
 }

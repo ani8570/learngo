@@ -11,7 +11,7 @@ type Account struct {
 	balance int
 }
 
-var NoMoney = errors.New("Can't withdraw you are poor")
+var errNoMoney = errors.New("Can't withdraw you are poor")
 
 // NewAccount creates Account
 func NewAccount(owner string) *Account {
@@ -21,14 +21,14 @@ func NewAccount(owner string) *Account {
 
 //Deposit x amount on your account
 func (a *Account) Deposit(amount int) {
-	fmt.Println("Gonna deposit", amount)
+	//fmt.Println("Gonna deposit", amount)
 	a.balance += amount
 }
 
 //Withdraw x amount your account
-func (a *Account) Withraw(amount int) error {
+func (a *Account) Withdraw(amount int) error {
 	if a.balance < amount {
-		return NoMoney
+		return errNoMoney
 	}
 	a.balance -= amount
 	return nil
@@ -37,4 +37,18 @@ func (a *Account) Withraw(amount int) error {
 //Balance return your account
 func (a Account) Balance() int {
 	return a.balance
+}
+
+//ChangeOwner of the account
+func (a *Account) ChangeOwner(newOwner string) {
+	a.owner = newOwner
+}
+
+//Owner of the account
+func (a Account) Owner() string {
+	return a.owner
+}
+
+func (a Account) String() string {
+	return fmt.Sprint(a.owner, "'s account.\nHas: ", a.balance)
 }
