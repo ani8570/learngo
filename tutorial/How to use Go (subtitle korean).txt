@@ -96,7 +96,7 @@ Go에서도 포인터와 래퍼런스 사용 가능
 
 배열도 사용 가능, 똑같이 0부터 접근
 names := [5]string{"nico", "lynn", "dal", "marl", "flynn"}
-
+///////////////////////////////////////////////
 map도 사용 가능
 Lee := map[string]string{"name": "L", "age": "12"}
 	fmt.Println(Lee)
@@ -105,6 +105,23 @@ for key, value := range Lee {
 	fmt.Println(key, value)
 }
 
+key값에 따라서 제거할 때
+delete(m, key) // m : map , key : string
+
+함수에서 map을 받아오면 *가 항상 붙어있다 생각하면 됨
+
+results := map[string]string
+
+밑에 처럼 적고 추가를 하면 panic 됨 --> map => nil
+var results = map[string]string 
+올바른 예
+var results = map[string]string {}
+var results = make(map[string]string) // make -> map만드는 함수
+
+
+
+
+//////////////////////////////////////////////////////
 구조체 사용가능
 (외부에서 구조체 사용시 사용가능하게 하려면 대문자)
 (외부에서 구조체 내부 변수 사용시 사용가능하게 하려면 대문자)
@@ -128,5 +145,19 @@ receiver를 가질 수 있음.
 receiver 규칙 : 구조체 이름의 첫번째 글자 소문자로 해서 받음.
 func (a Account) Deposit(amount int) {
 
+}
+
+//////////////////////
+go routines : 메인 함수가 시작 되는 동안에 병렬 처리함
+
+func main() {
+	go sexyCount("nico")
+	sexyCount("lynn") //go sexyCount("lynn") --> start and end at the same time
+}
+func sexyCount(name string) {
+	for i := 0; i < 10; i++ {
+		fmt.Println(name, " is sexy", i)
+		time.Sleep(time.Second)
+	}
 }
 
