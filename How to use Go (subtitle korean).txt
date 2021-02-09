@@ -71,3 +71,46 @@ func superAdd(numbers ...int) int {
 	return 1
 	//range
 }
+
+if문 자체에서 변수 선언 가능
+func canIDrink(age int) bool {
+	if koreanAge := age+2 ; koreanAge < 18 {
+		return false
+	}	
+	return true
+}
+
+switch문에서도 같음
+switch koreanAge := age + 2; {
+	case koreanAge < 18:
+		return false
+	case koreanAge == 18:
+		return true
+
+	}
+	return false
+
+Go에서도 포인터와 래퍼런스 사용 가능
+
+배열도 사용 가능, 똑같이 0부터 접근
+names := [5]string{"nico", "lynn", "dal", "marl", "flynn"}
+
+map도 사용 가능
+Lee := map[string]string{"name": "L", "age": "12"}
+	fmt.Println(Lee)
+
+for key, value := range Lee {
+	fmt.Println(key, value)
+}
+
+구조체 사용가능
+type person struct {
+	name    string
+	age     int
+	favFood []string
+}
+
+favFood := []string{"kimchi", "ramen"}
+l := person{"Lee", 25, favFood}			can
+i := person{name: "Lee", age: 18, favFood: favFood}	can
+i := person{name: "Lee", 18, favFood: favFood}		can't
