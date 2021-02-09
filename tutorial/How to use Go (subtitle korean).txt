@@ -148,7 +148,8 @@ func (a Account) Deposit(amount int) {
 }
 
 //////////////////////
-go routines : 메인 함수가 시작 되는 동안에 병렬 처리함
+go routines : 메인 함수가 시작 되는 동안에 병렬 처리함.
+ 메인 함수가 끝나면? 다 안되어도 종료시킴
 
 func main() {
 	go sexyCount("nico")
@@ -159,5 +160,32 @@ func sexyCount(name string) {
 		fmt.Println(name, " is sexy", i)
 		time.Sleep(time.Second)
 	}
+}
+
+channel선언
+func main() {
+	c := make(chan bool)
+	people := [2]string{"nico", "flynn"}
+	for _, person := range people {
+		go isSexy(person, c)
+	}
+	result := <-c 
+	fmt.Print(result)
+
+}
+channel에서 주고받을 자료형 선언
+c <- true로 값 전달
+c <- person + " is sexy"
+func isSexy(person string, c chan bool) {
+	//time.Sleep(time.Second * 5)
+	for i := 0; i < 100; i++ {
+		fmt.Println(person, " is sexy", i)
+		//time.Sleep(time.Second)
+	}
+	c <- true
+}
+
+func isSexy(person string, c chan string) {
+	c <- person + " is sexy"
 }
 
