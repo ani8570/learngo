@@ -103,7 +103,7 @@ for key, value := range Lee {
 	fmt.Println(key, value)
 }
 
-구조체 사용가능(구조체 사용시 외부에서도 사용가능하게 하려면 대문자)
+구조체 사용가능
 type person struct {
 	name    string
 	age     int
