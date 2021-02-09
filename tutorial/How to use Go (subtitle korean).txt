@@ -104,6 +104,13 @@ for key, value := range Lee {
 }
 
 구조체 사용가능
+(외부에서 구조체 사용시 사용가능하게 하려면 대문자)
+(외부에서 구조체 내부 변수 사용시 사용가능하게 하려면 대문자)
+type Person struct {
+	Name    string
+	Age     int
+	FavFood []string
+}
 type person struct {
 	name    string
 	age     int
@@ -114,3 +121,10 @@ favFood := []string{"kimchi", "ramen"}
 l := person{"Lee", 25, favFood}			can
 i := person{name: "Lee", age: 18, favFood: favFood}	can
 i := person{name: "Lee", 18, favFood: favFood}		can't
+
+receiver를 가질 수 있음. 
+receiver 규칙 : 구조체 이름의 첫번째 글자 소문자로 해서 받음.
+func (a Account) Deposit(amount int) {
+
+}
+
