@@ -189,3 +189,7 @@ func isSexy(person string, c chan string) {
 	c <- person + " is sexy"
 }
 
+//////////////////////////////////
+
+go get github.com/PuerkitoBio/goquery를  실행시켜 다운받아
+HTML 내부를 들여다 볼 수 있게 해줌
