@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -10,7 +11,8 @@ import (
 var baseURL string = "https://kr.indeed.com/jobs?q=python&start=10"
 
 func main() {
-	pages := getPages()
+	totalPages := getPages()
+	fmt.Println(totalPages)
 }
 
 func getPages() int {
@@ -23,9 +25,9 @@ func getPages() int {
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	checkErr(err)
 	doc.Find(".pagination").Each(func(i int, s *goquery.Selection) {
-		pages = s.find("a")
+		pages = s.Find("a").Length()
 	})
-	return 0
+	return pages
 }
 
 func checkErr(err error) {
