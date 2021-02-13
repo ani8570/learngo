@@ -23,6 +23,11 @@ var name string = "Lee"
  //this is sameting. but if you declared outside func,
  you have to declarared like this "var name string = "Lee"
 
+
+slice선언 :  var URLs []string // []안에 숫자가 없는게 포인트
+URLs = append(URLs, res) //res값 뒤로 추가.
+URLs = append([]string{res}, URLs...) // res값 앞에 추가
+
 //////////////////////////////////////
 
 Go can return more than one.
@@ -193,3 +198,8 @@ func isSexy(person string, c chan string) {
 
 go get github.com/PuerkitoBio/goquery를  실행시켜 다운받아
 HTML 내부를 들여다 볼 수 있게 해줌
+
+strconv.Itoa --> 숫자를 문자열로
+func strings.Join(elems []string, sep string) string // sep으로 elems를 연결
+func strings.Fields(s string) []string// 공백 단위로 구분
+func strings.TrimSpace(s string) string// 공백 제거

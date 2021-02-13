@@ -1,4 +1,4 @@
-package tutorials
+package main
 
 import (
 	"fmt"
@@ -77,7 +77,7 @@ type person struct {
 	favFood []string
 }
 
-func tutorials() {
+func main() {
 	name := "nico"
 	name = "Lynn"
 	fmt.Println(name)
