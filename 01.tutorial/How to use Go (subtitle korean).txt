@@ -6,6 +6,11 @@ ex ) C:\Go\src\github.com\ani8570\learngo
 
 go.mod -> go mod init 이름
 
+error : cgo: exec gcc: exec: gcc: executable file not found in %PATH%
+https://m.blog.naver.com/kh2un/222037244807
+https://sourceforge.net/projects/mingw-w64/files/mingw-w64/
+
+
 package 이름 작성
 ex ) package main
 
@@ -203,3 +208,4 @@ strconv.Itoa --> 숫자를 문자열로
 func strings.Join(elems []string, sep string) string // sep으로 elems를 연결
 func strings.Fields(s string) []string// 공백 단위로 구분
 func strings.TrimSpace(s string) string// 공백 제거
+

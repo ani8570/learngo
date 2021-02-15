@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"learngo/AccountAndMydict/accounts"
-	"learngo/AccountAndMydict/mydicts"
+	"learngo/02.StuctAndMap/accounts"
+	"learngo/02.StuctAndMap/mydicts"
 )
 
 //account
