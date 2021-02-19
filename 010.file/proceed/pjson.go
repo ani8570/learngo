@@ -3,30 +3,20 @@ package proceed
 import (
 	"encoding/json"
 
-	"github.com/ani8570/learngo/010.file/checkfunc"
+	"github.com/ani8570/learngo/010.file/f"
 )
 
 // Enjson : encoding json
-func Enjson(m checkfunc.Member) []byte {
+func Enjson(m f.Member) []byte {
 	jsonBytes, err := json.Marshal(m)
-	checkfunc.CheckErr(err)
+	f.CheckErr(err)
 	return jsonBytes
 }
 
 // Dejson : decoding json
-func Dejson(jsonBytes []byte) checkfunc.Member {
-	var m checkfunc.Member
+func Dejson(jsonBytes []byte) f.Member {
+	var m f.Member
 	err := json.Unmarshal(jsonBytes, &m)
-	checkfunc.CheckErr(err)
+	f.CheckErr(err)
 	return m
-}
-
-// EnXML : encoding XML
-func EnXML() {
-
-}
-
-// DeXML : decoding XML
-func DeXML() {
-
 }
