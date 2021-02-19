@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"learngo/02.StuctAndMap/accounts"
-	"learngo/02.StuctAndMap/mydicts"
+
+	"github.com/ani8570/learngo/02.StuctAndMap/accounts"
+	"github.com/ani8570/learngo/02.StuctAndMap/mydicts"
 )
 
 //account

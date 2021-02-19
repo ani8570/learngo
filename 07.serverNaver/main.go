@@ -1,9 +1,9 @@
 package main
 
 import (
-	"learngo/07.serverNaver/clust"
 	"os"
 
+	"github.com/ani8570/learngo/07.serverNaver/clust"
 	"github.com/labstack/echo/v4"
 )
 
