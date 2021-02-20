@@ -3,7 +3,7 @@ package calc_test
 import (
 	"testing"
 
-	"github.com/ani8570/learngo/calc"
+	"github.com/ani8570/learngo/06.serverAndTest/test/calc"
 )
 
 func TestSum(t *testing.T) {
