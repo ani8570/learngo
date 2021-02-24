@@ -88,6 +88,14 @@ func calc2(f calculator, a, b int) int {
 
 type calculator func(int, int) int
 
+func nextValue() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
+	}
+}
+
 func main() {
 	// name := "nico"
 	// name = "Lynn"
@@ -132,5 +140,13 @@ func main() {
 	// fmt.Println(r1)
 	// fmt.Println(r2)
 	// fmt.Println(r3)
+	// next := nextValue()
+	// fmt.Println(next())
+	// fmt.Println(next())
+	// fmt.Println(next())
+	// anotherNext := nextValue()
+	// fmt.Println(anotherNext())
+	// fmt.Println(anotherNext())
+
 	fmt.Println(123)
 }
